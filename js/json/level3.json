@@ -1,0 +1,60 @@
+{
+  "name": {
+    "en": "level 3",
+    "fr": "niveau 3"
+  },
+  "description": {
+    "en": "AI Ethics",
+    "fr": "IA Les Enjeux"
+  },
+  "steps": [
+    {
+      "name": { "en": "step 1", "fr": "etape 1" },
+      "src": "level1-step1.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 2" },
+      "src": "level1-step2.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 3" },
+      "src": "level1-step3.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 4" },
+      "src": "level1-step4.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 5" },
+      "src": "level1-step5.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 6" },
+      "src": "level1-step6.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 7" },
+      "src": "level1-step7.json"
+    },
+    {
+      "name": { "en": "step 1", "fr": "etape 8" },
+      "src": "level1-step8.json"
+    }
+  ],
+  "icon": [
+    {
+      "name": { "en": "icon-level1", "fr": "icon-level1" },
+      "src": "https://via.placeholder.com/150x150",
+      "class": "icon",
+      "id": "icon-level1"
+    }
+  ],
+  "assets": [
+    {
+      "name": { "en": "background-level1", "fr": "background-level1" },
+      "src": "https://via.placeholder.com/150x150",
+      "class": "bg",
+      "id": "bg-level1"
+    }
+  ]
+}

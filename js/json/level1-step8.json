@@ -1,0 +1,55 @@
+{
+  "name": "test8",
+  "type": "single",
+  "style": "game.css",
+  "choices": [
+    {
+      "name": "suspect1",
+      "answer": false,
+      "src": "img/faceid-13.png",
+      "class": "sus",
+      "id": "sus1"
+    },
+    {
+      "name": "suspect2",
+      "answer": false,
+      "src": "img/faceid-14.png",
+      "class": "sus",
+      "id": "sus2"
+    },
+    {
+      "name": "suspect3",
+      "answer": false,
+      "src": "img/faceid-15.png",
+      "class": "sus",
+      "id": "sus3"
+    },
+    {
+      "name": "suspect4",
+      "answer": false,
+      "src": "img/faceid-16.png",
+      "class": "sus",
+      "id": "sus4"
+    }
+  ],
+  "assets": [
+    {
+      "name": "background",
+      "src": "img/faceid-12.png",
+      "class": "background",
+      "id": "background"
+    },
+    {
+      "name": "criminal",
+      "src": "img/faceid-17.png",
+      "class": "criminal",
+      "id": "criminal"
+    }
+  ],
+  "responses": {
+    "again": "please try again",
+    "incorrect": "sorry, this is incorrect",
+    "correct": "you got it!",
+    "end": "ending message"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": {
+    "en": "AI Ethics",
+    "fr": "IA Les Enjeux"
+  },
+  "description": {
+    "en": "AI Ethics",
+    "fr": "IA Les Enjeux"
+  },
+  "id": "ai-ethics",
+  "class": "game",
+  "levels": ["1", "2", "3"]
+}

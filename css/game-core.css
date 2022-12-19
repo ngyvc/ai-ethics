@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* game - level select */
+
+.level-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  text-align: center;
+}
+.level-select .icon {
+  padding: 1em;
+}
+.level-select .icon:hover {
+  background-color: black;
+  color: white;
+}
+
+/* level loaded */
+
+.level .bg {
+  position: absolute;
+  background-image: url(https://via.placeholder.com/1920x1080/0000FF/808080?text=levelscreen);
+  height: 100vh;
+  width: 100vw;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+/* steps loaded */
