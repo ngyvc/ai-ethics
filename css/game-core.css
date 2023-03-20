@@ -1,7 +1,9 @@
-body {
+* {
   margin: 0;
   box-sizing: border-box;
 }
+
+body {}
 
 /* game - level select */
 
@@ -11,9 +13,11 @@ body {
   justify-items: center;
   text-align: center;
 }
+
 .level-select .icon {
   padding: 1em;
 }
+
 .level-select .icon:hover {
   background-color: black;
   color: white;
@@ -21,14 +25,15 @@ body {
 
 /* level loaded */
 
-.level .bg {
+.level.bg {
   position: absolute;
-  background-image: url(https://via.placeholder.com/1920x1080/0000FF/808080?text=levelscreen);
+  background-image: url(https://via.placeholder.com/1920x1080/000000/FFFFFF?text=levelscreen);
   height: 100vh;
   width: 100vw;
   background-position: center center;
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.1;
+  z-index: -1;
 }
 
 /* steps loaded */

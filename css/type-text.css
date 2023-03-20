@@ -1,0 +1,25 @@
+.type-text {
+  width: 50ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  text-align: center;
+  /* animation: typing 2s steps(50), blink 0.5s step-end infinite alternate; */
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.user-text {
+  width: 50ch;
+}

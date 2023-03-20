@@ -1,0 +1,15 @@
+{
+  "name": "test1",
+  "type": "text",
+  "style": "game.css",
+  "assets": [
+    {
+      "name": "criminal",
+      "src": "img/faceid-17.png",
+      "class": "criminal",
+      "id": "criminal"
+    }
+  ],
+  "message": "this is a test message",
+  "action": "click here"
+}

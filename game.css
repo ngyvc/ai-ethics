@@ -1,0 +1,130 @@
+/* TYPING TEXT */
+
+.type-text {
+  width: 50ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  text-align: center;
+  animation: typing 2s steps(50), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.btn-action {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+/* MULTIPLE CHOICES */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.gamneloader {
+  position: relative;
+}
+
+#test {
+  position: relative;
+}
+
+#test * {
+  position: absolute;
+}
+
+#test-msg {
+  color: white;
+  animation-name: fade;
+  animation-duration: 0.5s;
+}
+
+.sus.played {
+  opacity: 0.5;
+}
+
+.sus {
+  left: 2em;
+}
+
+#sus1 {
+  top: 10em;
+}
+
+#sus2 {
+  left: 12em;
+  top: 10em;
+}
+
+#sus3 {
+  top: 10em;
+}
+
+#sus4 {
+  left: 12em;
+  top: 10em;
+}
+
+#criminal {
+  top: 30em;
+  left: 12em;
+}
+
+#test-msg {
+  top: 30em;
+  left: 5em;
+}
+
+.background {
+  width: 150px;
+}
+
+@media screen and (min-width: 768px) {
+  .sus {
+    top: 10em;
+  }
+
+  #sus1 {
+    left: 5em;
+  }
+
+  #sus2 {
+    left: 15em;
+  }
+
+  #sus3 {
+    left: 25em;
+  }
+
+  #sus4 {
+    left: 35em;
+  }
+
+  #criminal {
+    top: 25em;
+    left: 35em;
+  }
+
+  #test-msg {
+    top: 25em;
+    left: 5em;
+  }
+}
