@@ -4,7 +4,7 @@ let gameArea = document.createElement("article");
 let lang = "en";
 let levelSelectTextHeading = "h2";
 
-let txtBackToMenu = `Back To Menu`;
+let txtBackToMenu = `Back To Games`;
 
 // if (!localStorage.getItem("currentLevel")) {
 //   localStorage.setItem("currentLevel", 0);

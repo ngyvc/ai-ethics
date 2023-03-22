@@ -1,7 +1,7 @@
 #step1 .text {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    font-size: 4em;
+    font-size: 2em;
     display: block;
     text-align: center;
     margin: 2em auto;
@@ -13,7 +13,7 @@
 
 .criminal {
     display: block;
-    margin: 2em auto;
+    margin: 1em auto 2em;
 }
 
 .choices {
@@ -23,7 +23,7 @@
 }
 
 .choices img {
-    padding: 1em 0;
+    padding: 0.25em 0;
 }
 
 .step.msg {
@@ -183,6 +183,10 @@
 
 
 @media screen and (min-width: 768px) {
+    #step1 .text {
+        font-size: 4em;
+    }
+
     .sus {
         top: 10em;
     }
@@ -216,5 +220,9 @@
     .choices {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .choices img {
+        padding: 1em 0;
     }
 }

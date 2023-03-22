@@ -12,7 +12,7 @@
   "icon": [
     {
       "name": { "en": "icon-level1", "fr": "icon-level1" },
-      "src": "https://via.placeholder.com/150x150",
+      "src": "img/airport-ai.png",
       "class": "icon",
       "id": "icon-level1",
       "type": "img"
