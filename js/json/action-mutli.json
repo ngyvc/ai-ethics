@@ -1,6 +1,7 @@
 {
-  "name": "step6",
+  "name": "test1",
   "type": "multi",
+  "style": "game.css",
   "choices": [
     {
       "name": "suspect1",
@@ -52,9 +53,9 @@
     }
   ],
   "responses": {
-    "again": "Please try again!",
-    "incorrect": "Sorry, this is not the criminal.",
-    "correct": "None of the suspects is a match",
-    "end": "Continue"
+    "again": "please try again",
+    "incorrect": "sorry, this is incorrect",
+    "correct": "you got it!",
+    "end": "ending message"
   }
 }

@@ -63,10 +63,20 @@ function fetchAllLevels(i, levels, levelsSelect, levelsObj) {
 }
 
 function loadLevel(event, level) {
+  currentLevel = levelsObj[level - 1];
+
+  if (currentLevel.style) {
+    let levelStyle = document.createElement("link");
+    levelStyle.setAttribute("rel", "stylesheet");
+    levelStyle.setAttribute("type", "text/css");
+    levelStyle.setAttribute("href", currentLevel.style);
+    document.querySelector("head").appendChild(levelStyle);
+    console.log(currentLevel.style);
+  }
+
   let levelArea = document.createElement("section");
   console.log("selected level", level, event.currentTarget);
   localStorage.setItem("currentLevel", level);
-  currentLevel = levelsObj[level - 1];
   gameArea.innerHTML = "";
   levelArea.id = `level${level}`;
   levelArea.classList = "level";
@@ -86,7 +96,7 @@ function loadLevel(event, level) {
   console.log("current level", currentLevel);
   if (currentLevel.assets) {
     for (let asset of currentLevel.assets) {
-      let assetImg = document.createElement("img");
+      let assetImg = document.createElement(asset.type);
       assetImg.alt = asset.name[lang];
       assetImg.classList = asset.class;
       assetImg.id = asset.id;
@@ -124,29 +134,31 @@ function loadStep(stepNum) {
   console.log(stepsObj[stepNum]);
   let data = stepsObj[stepNum];
 
-  let gameStyle = document.createElement("link");
-  gameStyle.setAttribute("rel", "stylesheet");
-  gameStyle.setAttribute("type", "text/css");
-  gameStyle.setAttribute("href", data.style);
-  document.querySelector("head").appendChild(gameStyle);
-  console.log(data.style);
   let step = document.createElement("section");
   step.id = data.name;
   step.classList = "step";
   let gameMsg = document.createElement("section");
+  gameMsg.classList = `${data.name} step msg`;
   gameMsg.id = `${data.name}-msg`;
   for (let asset of data.assets) {
-    let img = document.createElement("img");
-    img.src = asset.src;
-    img.classList = asset.class;
-    img.dataset.id = asset.name;
-    img.id = asset.id;
-    step.appendChild(img);
+    let tag = document.createElement(asset.type);
+
+    for (let property in asset) {
+      tag[property] = asset[property];
+    }
+    // img.src = asset.src;
+    // img.classList = asset.class;
+    // img.dataset.id = asset.name;
+    // img.id = asset.id;
+    step.appendChild(tag);
+  }
+  if (data.type === "static") {
+    loadStatic(step, data);
   }
   if (data.type === "multi") {
     loadMulti(step, data);
   }
-  if (data.type === "text") {
+  if (data.type === "text-typing") {
     loadText(step, data);
   }
   step.appendChild(gameMsg);
@@ -165,13 +177,17 @@ fetch("js/json/game.json")
 
 // multi answer
 function loadMulti(step, data) {
+  let choices = document.createElement("div");
+  choices.classList = "choices";
+  step.appendChild(choices);
+
   for (let asset of data.choices) {
     let img = document.createElement("img");
     img.src = asset.src;
-    img.classList = asset.class;
+    img.classList = asset.classList;
     img.dataset.id = asset.name;
     img.id = asset.id;
-    step.appendChild(img);
+    choices.appendChild(img);
     localStorage.setItem(`${data.name}-${asset.name}`, asset.answer);
     localStorage.setItem(`${data.name}-${asset.name}-status`, false);
     img.addEventListener(
@@ -181,7 +197,7 @@ function loadMulti(step, data) {
         event.target.classList.add("played");
         localStorage.setItem(`${data.name}-${asset.name}-status`, true);
         if (
-          document.querySelectorAll(`.${asset.class}`).length ==
+          document.querySelectorAll(`.${asset.classList}`).length ==
           document.querySelectorAll(".played").length
         ) {
           let gameResponse = document.createElement("section");
@@ -190,6 +206,7 @@ function loadMulti(step, data) {
             gameResponse,
             document.querySelector(`#${data.name}-msg`)
           );
+          gameResponse.classList = `${data.name} step msg`;
           gameResponse.id = `${data.name}-msg`;
           let endGame = document.createElement("section");
           endGame.classList = "end-game";
@@ -202,21 +219,55 @@ function loadMulti(step, data) {
             },
             { once: true }
           );
-
           gameResponse.appendChild(endGame);
         } else {
           let gameResponse = document.createElement("section");
           gameResponse.textContent = data.responses.incorrect;
+          gameResponse.classList = `${data.name} step msg incorrect`;
+          gameResponse.id = `${data.name}-msg`;
           step.replaceChild(
             gameResponse,
             document.querySelector(`#${data.name}-msg`)
           );
-          gameResponse.id = `${data.name}-msg`;
         }
       },
       { once: true }
     );
   }
+}
+
+function loadStatic(step, data) {
+  let typeArea = document.createElement("div");
+  typeArea.classList = "text";
+  step.appendChild(typeArea);
+  typeArea.innerText = data.message;
+
+  if (data.video) {
+    renderVideo();
+  }
+
+  function renderVideo() {
+    const video = document.createElement("video");
+    video.muted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.classList = "video";
+    video.setAttribute("playsinline", true);
+
+    const source = document.createElement("source");
+    source.setAttribute("src", data.video);
+
+    video.appendChild(source);
+    step.appendChild(video);
+  }
+
+  let action = document.createElement("div");
+  action.classList = "btn-action";
+  action.innerText = data.action;
+  step.appendChild(action);
+  action.addEventListener("click", (event) => {
+    nextStep();
+  });
 }
 
 function loadText(step, data) {
@@ -225,12 +276,12 @@ function loadText(step, data) {
   step.appendChild(typeArea);
 
   let typeMessage = data.message;
-  let typeSpeedFactor = 1 / 18;
+  let typeSpeedFactor = 1 / 12;
   let typeTextClass = "type-text";
 
   function typeText(typeMessage) {
     typeArea.classList.remove(typeTextClass);
-    typeArea.style.webkitAnimationName = "";
+    typeArea.style.animationName = "";
     typeArea.innerText = "";
     setTimeout(() => {
       typeArea.innerText = typeMessage;

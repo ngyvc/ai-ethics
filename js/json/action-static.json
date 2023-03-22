@@ -1,8 +1,9 @@
 {
-  "name": "step1",
+  "name": "test1",
   "type": "static",
+  "style": "game.css",
   "assets": [],
   "message": "Airport AI Game",
   "video": "video/walking-in-airport.mp4",
-  "action": "Start Game"
+  "action": "Let's Begin"
 }

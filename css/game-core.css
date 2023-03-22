@@ -26,14 +26,32 @@ body {}
 /* level loaded */
 
 .level.bg {
-  position: absolute;
-  background-image: url(https://via.placeholder.com/1920x1080/000000/FFFFFF?text=levelscreen);
-  height: 100vh;
-  width: 100vw;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  /* background-image: url(https://via.placeholder.com/1920x1080/000000/FFFFFF?text=levelscreen); */
+  background-color: #325f60;
   background-position: center center;
   background-size: cover;
-  opacity: 0.1;
-  z-index: -1;
 }
 
 /* steps loaded */
+
+.back-to-levels,
+.btn-action {
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  width: 10em;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.back-to-levels {
+  margin: 0 auto 0 0;
+}

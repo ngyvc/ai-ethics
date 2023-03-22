@@ -7,13 +7,14 @@
     "en": "AI Ethics",
     "fr": "IA Les Enjeux"
   },
-  "steps": ["1", "1"],
+  "steps": [1, 1],
   "icon": [
     {
       "name": { "en": "icon-level2", "fr": "icon-level2" },
       "src": "https://via.placeholder.com/150x150",
       "class": "icon",
-      "id": "icon-level2"
+      "id": "icon-level2",
+      "type": "img"
     }
   ],
   "assets": [
@@ -21,7 +22,8 @@
       "name": { "en": "background-level2", "fr": "background-level2" },
       "src": "https://via.placeholder.com/150x150",
       "class": "bg",
-      "id": "bg-level2"
+      "id": "bg-level2",
+      "type": "img"
     }
   ]
 }
