@@ -1,0 +1,228 @@
+#step1 .text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    display: block;
+    text-align: center;
+    margin: 2em auto;
+    padding: 0.5em;
+    width: 10em;
+    font-family: Square;
+    border-radius: .5em;
+}
+
+.criminal {
+    display: block;
+    margin: 1em auto 2em;
+}
+
+.choices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.choices img {
+    padding: 0.25em 0;
+}
+
+.step.msg {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 auto;
+    display: block;
+    width: 15em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.msg.incorrect {
+    animation: fade-out 1s 1.5s forwards;
+}
+
+.end-game {
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    text-align: center;
+    width: 10em;
+    margin: 1em auto;
+    padding: 0.5em;
+    border-radius: 1em;
+}
+
+.background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    /* background-image: url(https://via.placeholder.com/1920x1080/000000/FFFFFF?text=levelscreen); */
+    background-color: #325f60;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* AIRPORT STUFF */
+
+.video {
+
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+}
+
+
+/* TYPING TEXT */
+
+.type-text {
+    width: 50ch;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    text-align: center;
+    font-size: 2em;
+    margin: 4em auto;
+    animation: typing 2s steps(50), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0px;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* MULTIPLE CHOICES */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.gamneloader {
+    position: relative;
+}
+
+#test {
+    position: relative;
+}
+
+#test * {
+    position: absolute;
+}
+
+#test-msg {
+    color: white;
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+.sus.played {
+    opacity: 0.5;
+}
+
+.sus {
+    left: 2em;
+}
+
+#sus1 {
+    top: 10em;
+}
+
+#sus2 {
+    left: 12em;
+    top: 10em;
+}
+
+#sus3 {
+    top: 10em;
+}
+
+#sus4 {
+    left: 12em;
+    top: 10em;
+}
+
+#criminal {
+    top: 30em;
+    left: 12em;
+}
+
+#test-msg {
+    top: 30em;
+    left: 5em;
+}
+
+
+@media screen and (min-width: 768px) {
+    #step1 .text {
+        font-size: 4em;
+    }
+
+    .sus {
+        top: 10em;
+    }
+
+    #sus1 {
+        left: 5em;
+    }
+
+    #sus2 {
+        left: 15em;
+    }
+
+    #sus3 {
+        left: 25em;
+    }
+
+    #sus4 {
+        left: 35em;
+    }
+
+    #criminal {
+        top: 25em;
+        left: 35em;
+    }
+
+    #test-msg {
+        top: 25em;
+        left: 5em;
+    }
+
+    .choices {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .choices img {
+        padding: 1em 0;
+    }
+}

@@ -1,17 +1,17 @@
 {
   "name": {
-    "en": "level 3",
-    "fr": "niveau 3"
+    "en": "Survey",
+    "fr": "Questionnaire"
   },
   "description": {
-    "en": "AI Ethics",
-    "fr": "IA Les Enjeux"
+    "en": "Survey",
+    "fr": "Questionnaire"
   },
   "steps": [1, 1],
   "icon": [
     {
       "name": { "en": "icon-level1", "fr": "icon-level1" },
-      "src": "https://via.placeholder.com/150x150",
+      "src": "https://via.placeholder.com/450x450",
       "class": "icon",
       "id": "icon-level1",
       "type": "img"

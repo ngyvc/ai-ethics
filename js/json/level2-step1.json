@@ -1,8 +1,14 @@
 {
-  "name": "test2",
-  "type": "text-typing",
-  "style": "game.css",
+  "name": "step1",
+  "type": "static",
   "assets": [],
-  "message": "this is a test message",
-  "action": "click here"
+  "message": {
+    "en":"AI Chatbot Simulation",
+    "fr":"Simulation de chatbot IA"
+  },
+  "video": "chatbot/videos/scene01.mp4",
+  "action": {
+    "en": "Start Simulation",
+    "fr": "Commencer la simulation"
+  }
 }

@@ -1,5 +1,17 @@
 let gameloader = document.querySelector(".gameloader");
 
+//comments from Bruce
+
+/* 
+  * define # of games / levels[] in games.json
+  * update level#.json for load page of each game
+    * define number of levels / steps for each game in  steps[]
+    * can reorder steps[] i.e.  "steps": [3, 2, 6, 1]
+    * each step has an associated json file "level??-step??.json";
+    * update json level-step files with resource & actions which go to next step
+
+*/
+
 // load json
 fetch("js/json/game.json")
   .then((res) => res.json())

@@ -2,6 +2,11 @@
   "name": "step3",
   "type": "text-typing",
   "assets": [],
-  "message": "Scanning the face now...",
-  "action": "Continue"
+  "message": {
+    "en": "Scanning the face now...",
+    "fr": "Scanne le visage maintenant..."},
+  "action":{
+    "en": "Coninue",
+    "fr": "Continuer"
+  }
 }

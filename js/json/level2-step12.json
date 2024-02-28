@@ -1,0 +1,14 @@
+{
+  "name": "step12",
+  "type": "static",
+  "assets": [],
+  "message": {
+    "en":"AI Chatbot Simulation",
+    "fr":"Simulation de chatbot IA"
+  },
+  "video": "chatbot/videos/scene12.mp4",
+  "action": {
+    "en": "Continue the Simulation",
+    "fr": "Continuer la simulation"
+  }
+}

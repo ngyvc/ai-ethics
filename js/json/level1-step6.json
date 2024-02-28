@@ -2,6 +2,12 @@
   "name": "step1",
   "type": "static",
   "assets": [],
-  "message": "We can see with this game that there is bias in AI.",
-  "action": "End Game"
+  "message": {
+    "en": "We can see with this game that there is bias in AI.",
+    "fr": "Avec ce jeu, nous pouvons voir qu'il y a des biais dans l'IA."
+  },
+  "action":{
+    "en": "Finish Simulation",
+    "fr": "Terminer la simulation"
+  }
 }

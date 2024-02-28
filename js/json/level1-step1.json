@@ -2,7 +2,13 @@
   "name": "step1",
   "type": "static",
   "assets": [],
-  "message": "Airport AI Game",
+  "message": {
+    "en": "Airport AI Simulation",
+    "fr": "Simulation d'IA à l'aéroport"
+  },
   "video": "video/walking-in-airport.mp4",
-  "action": "Start Game"
+  "action": {
+    "en": "Start Simulation",
+    "fr": "Commencer la simulation"
+  }
 }

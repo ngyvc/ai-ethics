@@ -1,0 +1,29 @@
+
+Welcome to our survey on the appreciation of Artificial Intelligence (AI) technology following its usage. As AI becomes increasingly integrated into our daily lives, understanding public perceptions and attitudes towards its applications is crucial. This survey aims to gather insights into how individuals perceive and appreciate AI after interacting with it in various contexts.
+
+Instructions:
+
+Please read each statement carefully.
+Indicate your level of agreement with each statement on a 5-point Likert scale, where:
+1 corresponds to "Strongly Disagree"
+2 corresponds to "Disagree"
+3 corresponds to "Neutral"
+4 corresponds to "Agree"
+5 corresponds to "Strongly Agree"
+Your honest responses will contribute valuable information towards understanding the public's perspective on AI technology. Thank you for your participation. Let's begin!
+
+
+
+
+Bienvenue à notre enquête sur l'appréciation de la technologie de l'Intelligence Artificielle (IA) après son utilisation. Alors que l'IA devient de plus en plus intégrée à notre vie quotidienne, comprendre les perceptions et attitudes du public à l'égard de ses applications est crucial. Cette enquête vise à recueillir des informations sur la manière dont les individus perçoivent et apprécient l'IA après avoir interagi avec elle dans divers contextes.
+
+Instructions :
+
+Veuillez lire attentivement chaque énoncé.
+Indiquez votre niveau d'accord avec chaque énoncé sur une échelle de Likert à 5 points, où :
+1 correspond à "Fortement en désaccord"
+2 correspond à "En désaccord"
+3 correspond à "Neutre"
+4 correspond à "D'accord"
+5 correspond à "Tout à fait d'accord"
+Vos réponses honnêtes contribueront à recueillir des informations précieuses sur la perspective du public concernant la technologie de l'IA. Merci de votre participation. Commençons !

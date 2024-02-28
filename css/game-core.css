@@ -5,6 +5,7 @@
 
 body {
   background-color: slategray;
+  padding-bottom: 3rem;
 }
 
 h1 {
@@ -13,30 +14,67 @@ h1 {
   margin-bottom: 1em;
   text-align: center;
 }
+nav, footer {
+  position: fixed;
+  padding: 0 0.5rem;
+  width: 100%;
+  background-color: rgb(16 16 16 /1);
+  display: grid;
+  /* justify-content: end; */
+  z-index: 999;
+}
+nav {
+  grid-template-columns: repeat(3, minmax(auto, auto));
+  gap: 1.44rem;
+  height: 50px;
+  top: 0;
+  justify-content: end;
+}
+footer {
+  grid-template-columns: repeat(3, minmax(auto, auto));
+  gap: 1.44rem;
+  height: 50px;
+  bottom: 0;
+  justify-content: end;
+}
 
 /* game - level select */
-
+.gameloader{
+  margin-top: 60px;
+}
 .level-select {
   margin-top: 2em;
   display: grid;
+  gap: 1.44rem;
   grid-template-columns: 1fr;
   justify-items: center;
   text-align: center;
 }
 
 
-.level-select .icon {
+.level-select .icon, #questionnaire {
   padding: 1em;
   background-color: white;
 }
 
-.level-select .icon img {
-  width: 500px;
-  max-width: 75vw;
+#questionnaire{
+  max-width: 540px;
+  margin: 2rem auto 4rem auto;
+  text-align: center;
+}
+
+#questionnaire:hover{
+    background-color: #042742;
+    color: white;
+}
+
+.level-select .icon img, #questionnaire img {
+  width: 100%;
+  max-height: 500px;
 }
 
 .level-select .icon:hover {
-  background-color: black;
+  background-color: #042742;;
   color: white;
 }
 
@@ -63,7 +101,7 @@ h1 {
   border: 1px solid black;
   background-color: white;
   text-align: center;
-  width: 10em;
+  width: 16em;
   padding: 1em;
   border-radius: 1em;
 }
@@ -76,3 +114,43 @@ h1 {
   width: 10em;
   padding: 0.5em;
 }
+
+
+video{
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+}
+
+#sponsors{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.44rem;
+  color: rgb(240 240 240 / 1);
+  background-color: #042742;
+  padding: 0.5rem;
+}
+#sponsors figure{
+  justify-self: center;
+  align-self: middle;
+}
+#sponsors img{
+  
+  max-height: 40px;
+  margin: 0 auto;
+} 
+
+@media screen and (min-width: 700px) {
+  .level-select {
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    margin: 0 auto;
+   
+  }
+  
+  
+}
+
+.hidden {
+  display: none;
+} 

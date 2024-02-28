@@ -2,6 +2,12 @@
   "name": "step4",
   "type": "text-typing",
   "assets": [],
-  "message": "You will be permitted.",
-  "action": "Continue"
+  "message": {
+    "en":  "You will be permitted.",
+    "fr": "Vous serez autorisé."
+  },
+  "action":{
+    "en": "Coninue",
+    "fr": "Continuer"
+  }
 }

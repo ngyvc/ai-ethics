@@ -52,9 +52,17 @@
     }
   ],
   "responses": {
-    "again": "Please try again!",
-    "incorrect": "Sorry, this is not the criminal.",
-    "correct": "None of the suspects is a match",
-    "end": "Continue"
+    "en": {
+      "again": "Please try again!",
+      "incorrect": "Sorry, this is not the one.",
+      "correct": "None of the suspects is a match",
+      "end": "Continue"
+    },
+    "fr": {
+      "again": "Sil vous plait, essayez encore!",
+      "incorrect": "Désolé, ce n'est pas le bon.",
+      "correct": "Aucun des suspects n'est un match.",
+      "end": "Continuer"
+    }
   }
 }

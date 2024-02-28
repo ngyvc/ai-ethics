@@ -2,6 +2,13 @@
   "name": "step2",
   "type": "text-typing",
   "assets": [],
-  "message": "Welcome to Aiport AI.",
-  "action": "Continue"
+  "message": {
+    "en": "Welcome to Aiport AI. l1-s2",
+    "fr": "Bienvenue à l'IA de l'aéroport. l1-s2"
+  },
+  
+  "action":{
+    "en": "Coninue",
+    "fr": "Continuer"
+  }
 }

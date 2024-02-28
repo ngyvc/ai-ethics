@@ -1,10 +1,60 @@
 let gameloader = document.querySelector(".gameloader");
 let gameJsonPath = "js/json/";
 let gameArea = document.createElement("article");
-let lang = "en";
 let levelSelectTextHeading = "h2";
 
-let txtBackToMenu = `Back To Games`;
+let languagePicker = document.querySelector('#language-picker');
+let lang = getLanguage();
+
+function getLanguage() {
+  if(localStorage.getItem('language') == 'fr' || localStorage.getItem('language') == 'en'){
+    setLanguagePicker(localStorage.getItem('language'));
+    //updateLanguage(localStorage.getItem('language'));
+    return localStorage.getItem('language');
+  }else if(navigator.languages[1] == 'en'){
+    setLanguagePicker('en');
+    //updateLanguage('en');
+    return navigator.languages[1];
+  }else{
+    return 'fr';
+  }
+}
+function changeLanguage() {
+  
+  if(lang == 'fr'){
+    setLanguagePicker('en');
+    localStorage.setItem('language', 'en'); 
+    //updateLanguage('en');
+  }else{  
+    setLanguagePicker('fr');
+    localStorage.setItem('language', 'fr');
+    //updateLanguage('fr');
+  }
+  lang = getLanguage();
+  loadGame(gameObj);
+  //backToLevels();
+}
+
+function setLanguagePicker(lang){
+  if(lang == 'fr'){
+    languagePicker.dataset.language = 'en';
+    languagePicker.textContent = 'English'; 
+    
+  }else{  
+    languagePicker.dataset.language = 'fr';
+    languagePicker.textContent = 'français';
+    
+  }
+}
+let nav = document.querySelector('nav');
+nav.addEventListener('click', function(event){
+  if(event.target.id == 'language-picker'){
+    changeLanguage(getLanguage());
+  }
+});
+
+
+//let txtBackToMenu = `Back To Games`;
 
 // if (!localStorage.getItem("currentLevel")) {
 //   localStorage.setItem("currentLevel", 0);
@@ -22,13 +72,12 @@ let levelsObj = [];
 let stepsObj = [];
 
 function loadGame(gameObj) {
+  gameArea.innerHTML = "";
   gameArea.id = gameObj.id;
   gameArea.classList = gameObj.class;
-  console.log("game", gameObj);
+  //console.log("game", gameObj);
   let levelsSelect = document.createElement("section");
   levelsSelect.classList = "level-select";
-  // for (const level of gameObj.levels) {
-  // }
   fetchAllLevels(0, gameObj.levels, levelsSelect, levelsObj);
   gameloader.appendChild(gameArea);
 }
@@ -50,6 +99,8 @@ function fetchAllLevels(i, levels, levelsSelect, levelsObj) {
       levelSelectTxt.textContent = data.name[lang];
       levelSelect.appendChild(levelSelectTxt);
       levelSelect.addEventListener("click", (event) => {
+        //remove "questionnaire section?"
+        hideQuestionnaire();
         loadLevel(event, levels[i]);
       });
       levelsSelect.appendChild(levelSelect);
@@ -80,15 +131,15 @@ function loadLevel(event, level) {
   gameArea.innerHTML = "";
   levelArea.id = `level${level}`;
   levelArea.classList = "level";
-  let backLevels = document.createElement("div");
-  backLevels.classList = "back-to-levels";
-  backLevels.id = `back-to-levels`;
-  backLevels.innerText = txtBackToMenu;
-  levelArea.appendChild(backLevels);
-  backLevels.addEventListener("click", (event) => {
-    console.log("object");
-    backToLevels();
-  });
+  // let backLevels = document.createElement("div");
+  // backLevels.classList = "back-to-levels";
+  // backLevels.id = `back-to-levels`;
+  // backLevels.innerText = txtBackToMenu;
+  // levelArea.appendChild(backLevels);
+  // backLevels.addEventListener("click", (event) => {
+  //   console.log("object");
+  //   backToLevels();
+  // });
   let levelBg = document.createElement("section");
   levelBg.classList = "level bg";
   levelBg.id = `bg-level${level}`;
@@ -201,7 +252,7 @@ function loadMulti(step, data) {
           document.querySelectorAll(".played").length
         ) {
           let gameResponse = document.createElement("section");
-          gameResponse.textContent = data.responses.correct;
+          gameResponse.textContent = data.responses[lang].correct;
           step.replaceChild(
             gameResponse,
             document.querySelector(`#${data.name}-msg`)
@@ -210,7 +261,7 @@ function loadMulti(step, data) {
           gameResponse.id = `${data.name}-msg`;
           let endGame = document.createElement("section");
           endGame.classList = "end-game";
-          endGame.textContent = data.responses.end;
+          endGame.textContent = data.responses[lang].end;
           endGame.addEventListener(
             "click",
             (event) => {
@@ -222,7 +273,7 @@ function loadMulti(step, data) {
           gameResponse.appendChild(endGame);
         } else {
           let gameResponse = document.createElement("section");
-          gameResponse.textContent = data.responses.incorrect;
+          gameResponse.textContent = data.responses[lang].incorrect;
           gameResponse.classList = `${data.name} step msg incorrect`;
           gameResponse.id = `${data.name}-msg`;
           step.replaceChild(
@@ -240,7 +291,7 @@ function loadStatic(step, data) {
   let typeArea = document.createElement("div");
   typeArea.classList = "text";
   step.appendChild(typeArea);
-  typeArea.innerText = data.message;
+  typeArea.innerText = data.message[lang];
 
   if (data.video) {
     renderVideo();
@@ -263,9 +314,10 @@ function loadStatic(step, data) {
 
   let action = document.createElement("div");
   action.classList = "btn-action";
-  action.innerText = data.action;
+  action.innerText = data.action[lang];
   step.appendChild(action);
   action.addEventListener("click", (event) => {
+    console.log("next step" );
     nextStep();
   });
 }
@@ -275,7 +327,7 @@ function loadText(step, data) {
   typeArea.classList = "type-area";
   step.appendChild(typeArea);
 
-  let typeMessage = data.message;
+  let typeMessage = data.message[lang];
   let typeSpeedFactor = 1 / 12;
   let typeTextClass = "type-text";
 
@@ -300,9 +352,10 @@ function loadText(step, data) {
 
   typeText(typeMessage);
 
+  console.log(data.action[lang]);
   let action = document.createElement("div");
   action.classList = "btn-action";
-  action.innerText = data.action;
+  action.innerText = data.action[lang];
   step.appendChild(action);
   action.addEventListener("click", (event) => {
     nextStep();
@@ -329,5 +382,11 @@ function backToLevels() {
   localStorage.setItem("currentStep", 0);
   localStorage.setItem("currentLevel", 0);
   stepsObj = [];
+  document.querySelector("#questionnaire").classList.remove("hidden");
   loadGame(gameObj);
+}
+
+function hideQuestionnaire() {
+  console.log("hide questionnaire");
+  document.querySelector("#questionnaire").classList.add("hidden");
 }

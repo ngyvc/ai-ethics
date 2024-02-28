@@ -1,0 +1,14 @@
+{
+  "name": "step2",
+  "type": "text-typing",
+  "assets": [],
+  "message": {
+    "en":"Welcome to Aiport AI. l1-s2",
+    "fr":"Bienvenue à l'aéroport AI. l1-s2"
+  },
+  "video": "chatbot/videos/scene02.mp4",
+  "action": {
+    "en": "Continue the Simulation",
+    "fr": "Continuer la simulation"
+  }
+}
